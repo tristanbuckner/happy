@@ -1,0 +1,116 @@
+<project name="Happy" default="jar" basedir=".">
+    <description>
+        Happy Build File
+    </description>
+    <!--
+        This sets up the location of Hadoop and Jython.
+        Hard-code these paths if you aren't going to set the environment variables.
+    -->
+    <property environment="env"/>
+    <property name="HADOOP_HOME" value="${env.HADOOP_HOME}"/>
+    <property name="JYTHON_HOME" value="${env.JYTHON_HOME}"/>
+
+    <property name="version" value="0.2"/>
+    <property name="version-name" value="happy-${version}"/>
+
+    <!-- set global properties for this build -->
+    <property name="src.java" location="src/java"/>
+	<property name="src.jython" location="src/jython"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+    <property name="distdir" location="${dist}/${version-name}"/>
+    <property name="bin" location="bin"/>
+    <property name="lib" location="lib"/>
+    <property name="jarfile" location="happy.jar"/>
+    <property name="distfile" location="${version-name}.tgz"/>
+
+    <path id="classpath">
+        <fileset dir="${lib}" includes="**/*.jar"/>
+        <fileset dir="${HADOOP_HOME}" includes="**/*.jar"/>
+        <fileset dir="${JYTHON_HOME}" includes="**/*.jar"/>
+    </path>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${build}/classes"/>
+        <mkdir dir="${build}/include"/>
+    	<mkdir dir="${build}/jython"/>
+    	<mkdir dir="${build}/jython"/>
+        <mkdir dir="${dist}"/>
+        <mkdir dir="${distdir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.java}" destdir="${build}/classes" debug="true" classpathref="classpath" target="1.5">
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <copy todir="${build}/jython">
+            <fileset dir="${src.jython}" includes="**/*.py"/>
+        </copy>
+
+<!--    precompiling python files is a great idea except that jython import breaks for __init__.py files.
+        <java jar="${JYTHON_HOME}/jython.jar" fork="true">
+            <arg value="-c" />
+            <arg value="import compileall;compileall.compile_dir('${build}/jython')" />
+        </java> -->
+
+        <jar jarfile="${jarfile}" compress="true" level="9">
+            <fileset dir="${build}/classes" includes="**/*"/>
+            <fileset dir="${build}/include" includes="**/*"/>
+            <fileset dir="${build}/jython" includes="**/*"/>
+        </jar>
+    </target>
+
+    <target name="doc">
+        <javadoc classpathref="classpath" sourcepath="${src.java}" destdir="doc/api" use="true" >
+        </javadoc>
+        <!-- use restructured text to compile the documentation: -->
+        <exec executable="rst2html.py">
+            <arg value="doc/happy.txt"/>
+            <arg value="doc/happy.html"/>
+        </exec>
+    </target>
+
+    <target name="dist" depends="jar,doc">
+        <copy todir="${distdir}/src">
+            <fileset dir="src" includes="**/*"/>
+        </copy>
+        <copy todir="${distdir}/bin">
+            <fileset dir="bin" includes="**/*"/>
+        </copy>
+        <chmod perm="a+x" file="${distdir}/bin/happy.sh"/>
+        <copy todir="${distdir}/doc">
+            <fileset dir="doc" includes="**/*"/>
+        </copy>
+        <copy todir="${distdir}/examples">
+            <fileset dir="examples" includes="**/*"/>
+        </copy>
+        <copy todir="${distdir}/lib">
+            <fileset dir="lib" includes="**/*"/>
+        </copy>
+        <copy todir="${distdir}">
+            <fileset file="${jarfile}"/>
+            <fileset file="LICENSE.txt"/>
+            <fileset file="build.xml"/>
+        </copy>
+        <tar destfile="${distfile}" compression="gzip" longfile="gnu">
+            <tarfileset dir="${dist}">
+              <exclude name="${version-name}/bin/*" />
+              <include name="${version-name}/**" />
+            </tarfileset>
+            <tarfileset dir="${dist}" mode="755">
+              <include name="${version-name}/bin/*" />
+            </tarfileset>
+        </tar>
+    </target>
+
+    <target name="clean"
+            description="clean up">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+        <delete file="${jarfile}"/>
+        <delete file="${distfile}"/>
+    </target>
+</project>

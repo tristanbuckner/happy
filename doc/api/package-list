@@ -1,0 +1,6 @@
+com.freebase.happy
+com.freebase.happy.bjson
+com.freebase.happy.cloud
+com.freebase.happy.json
+com.freebase.happy.util
+org.apache.hadoop.mapred

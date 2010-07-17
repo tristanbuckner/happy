@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title></title>
+<style type="text/css">
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-18 01:56:14 +0100 (Sun, 18 Dec 2005) $
+:Revision: $Revision: 4224 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+<p><strong>Happy</strong> is a framework that allows <a class="reference" href="http://hadoop.apache.org/core/">Hadoop</a> jobs to be written and run in <a class="reference" href="http://www.python.org/doc/2.2.1/">Python 2.2</a> using <a class="reference" href="http://www.jython.org/Project/index.html">Jython</a>.  It is an easy way to write map-reduce programs for Hadoop, and includes some new useful features as well.  The current release supports Hadoop 0.17.2.</p>
+<div class="section">
+<h1><a id="quickstart" name="quickstart">Quickstart</a></h1>
+<ol class="arabic">
+<li><p class="first">You may need to set your <tt class="docutils literal"><span class="pre">JAVA_HOME</span></tt> environment variable.  See <a class="reference" href="http://www.google.com/search?hl=en&amp;q=how+do+I+set+JAVA_HOME">google</a> for details.</p>
+</li>
+<li><p class="first">Download <a class="reference" href="http://www.jython.org/Project/download.html">Jython 2.2.1</a> and install it locally as explained <a class="reference" href="http://www.jython.org/Project/installation.html">here</a>.</p>
+</li>
+<li><p class="first">Set the <tt class="docutils literal"><span class="pre">JYTHON_HOME</span></tt> environment variable to point to your Jython install directory.</p>
+</li>
+<li><p class="first">Either download and install <a class="reference" href="http://hadoop.apache.org/core/">Hadoop</a> 0.17.2 or use an existing local installation.</p>
+</li>
+<li><p class="first">Set the <tt class="docutils literal"><span class="pre">HADOOP_HOME</span></tt> environment variable to the root of the Hadoop installation.  By default, Happy uses <tt class="docutils literal"><span class="pre">$HADOOP_HOME/conf</span></tt> as the location of the configuration files for your installation.  To have it use a different directory, set the <tt class="docutils literal"><span class="pre">HADOOP_CONF</span></tt> environment variable.</p>
+</li>
+<li><p class="first">Add Jython to the classpath of your Hadoop cluster.  This usually requires copying the Jython installation to a path where it can be accessed by all of the Hadoop processes for your cluster, editing <tt class="docutils literal"><span class="pre">$HADOOP_CONF/hadoop-env.sh</span></tt> to include the absolute path to <tt class="docutils literal"><span class="pre">jython.jar</span></tt> in the <tt class="docutils literal"><span class="pre">CLASSPATH</span></tt> variable, and restarting your cluster.</p>
+</li>
+<li><p class="first">Download and unpack the Happy release.</p>
+</li>
+<li><p class="first">To run the Happy wordcount demo on a text file in your Hadoop DFS, go to the Happy release dir and run:</p>
+<pre class="literal-block">
+./bin/happy.sh ./examples/wordcount.py &lt;input&gt; &lt;output&gt;
+</pre>
+</li>
+</ol>
+</div>
+<div class="section">
+<h1><a id="happy-overview" name="happy-overview">Happy Overview</a></h1>
+<p>Map-reduce jobs in Happy are defined by sub-classing <tt class="docutils literal"><span class="pre">happy.HappyJob</span></tt> and implementing a <tt class="docutils literal"><span class="pre">map(records,</span> <span class="pre">task)</span></tt> and <tt class="docutils literal"><span class="pre">reduce(key,</span> <span class="pre">values,</span> <span class="pre">task)</span></tt> function.  Then you create an instance of the class, set the job parameters (such as inputs and outputs) and call <cite>run()</cite>.</p>
+<p>When you call <tt class="docutils literal"><span class="pre">run()</span></tt>, Happy serializes your job instance and copies it and all accompanying libraries out to the Hadoop cluster.  Then for each task in the Hadoop job, your job instance is de-serialized and <tt class="docutils literal"><span class="pre">map</span></tt> or <tt class="docutils literal"><span class="pre">reduce</span></tt> is called.</p>
+<p>The task results are written out using a collector, but aggregate statistics and other roll-up information can be stored in the <tt class="docutils literal"><span class="pre">happy.results</span></tt> dictionary, which is returned from the <tt class="docutils literal"><span class="pre">run()</span></tt> call.</p>
+<p>Jython modules and Java jar files that are being called by your code can be specified using the environment variable <tt class="docutils literal"><span class="pre">HAPPY_PATH</span></tt>.  These are added to the Python path at startup, and are also automatically included when jobs are sent to Hadoop.  The path is stored in <tt class="docutils literal"><span class="pre">happy.path</span></tt> and can be edited at runtime.</p>
+<div class="section">
+<h2><a id="wordcount-example" name="wordcount-example">WordCount Example</a></h2>
+<p>Below is the <tt class="docutils literal"><span class="pre">examples/wordcount.py</span></tt> script.  This script takes a text file as input and outputs a count of all of the words in the file.  It uses the Happy logging APIs and the Happy results dictionary.</p>
+<pre class="literal-block">
+import sys, happy, happy.log
+
+happy.log.setLevel(&quot;debug&quot;)
+log = happy.log.getLog(&quot;wordcount&quot;)
+
+class WordCount(happy.HappyJob):
+    def __init__(self, inputpath, outputpath):
+        happy.HappyJob.__init__(self)
+        self.inputpaths = inputpath
+        self.outputpath = outputpath
+        self.inputformat = &quot;text
+
+    def map(self, records, task):
+        for _, value in records:
+            for word in value.split():
+                task.collect(word, &quot;1&quot;)
+
+    def reduce(self, key, values, task):
+        count = 0;
+        for _ in values: count += 1
+        task.collect(key, str(count))
+        log.debug(key + &quot;:&quot; + str(count))
+        happy.results[&quot;words&quot;] = happy.results.setdefault(&quot;words&quot;, 0) + count
+        happy.results[&quot;unique&quot;] = happy.results.setdefault(&quot;unique&quot;, 0) + 1
+
+if __name__ == &quot;__main__&quot;:
+    if len(sys.argv) &lt; 3:
+        print &quot;Usage: &lt;inputpath&gt; &lt;outputpath&gt;&quot;
+        sys.exit(-1)
+    wc = WordCount(sys.argv[1], sys.argv[2])
+    results = wc.run()
+    print str(sum(results[&quot;words&quot;])) + &quot; total words&quot;
+    print str(sum(results[&quot;unique&quot;])) + &quot; unique words&quot;
+</pre>
+<div class="section">
+<h3><a id="constructor" name="constructor">Constructor</a></h3>
+<pre class="literal-block">
+def __init__(self, inputpath, outputpath):
+    happy.HappyJob.__init__(self)
+    self.inputpaths = inputpath
+    self.outputpath = outputpath
+    self.inputformat = &quot;text&quot;
+</pre>
+<p>The job parameters are set here.  <tt class="docutils literal"><span class="pre">self.inputpaths</span></tt> can be a single path or a list of paths, and specifies the files and directories in the DFS to use for the job.  <tt class="docutils literal"><span class="pre">self.outputpath</span></tt> specifies the output directory.  <tt class="docutils literal"><span class="pre">self.inputformat</span> <span class="pre">=</span> <span class="pre">&quot;text&quot;</span></tt> specifies that the input files will be treated as text files, splitting records on newlines.  The key is the byte offset of the line, and the value is the line of text.</p>
+</div>
+<div class="section">
+<h3><a id="map-function" name="map-function">Map Function</a></h3>
+<pre class="literal-block">
+def map(self, records, task):
+    for _, value in records:
+        for word in value.split():
+            task.collect(word, &quot;1&quot;)
+</pre>
+<p>The map function takes an iterator over <tt class="docutils literal"><span class="pre">key,</span> <span class="pre">value</span></tt> tuples, and a task object that collects output.  The function splits each string and then sends the key, value pair <tt class="docutils literal"><span class="pre">&lt;word&gt;,</span> <span class="pre">&quot;1&quot;</span></tt> to the reducer.  The Hadoop cluster then sorts the output by the keys (the words) and groups together the values for processing by the reducer function.</p>
+</div>
+<div class="section">
+<h3><a id="reduce-function" name="reduce-function">Reduce Function</a></h3>
+<pre class="literal-block">
+def reduce(self, key, values, task):
+    count = 0;
+    for _ in values: count += 1
+    task.collect(key, str(count))
+    log.debug(key + &quot;:&quot; + str(count))
+    happy.results[&quot;words&quot;] = happy.results.setdefault(&quot;words&quot;, 0) + count
+    happy.results[&quot;unique&quot;] = happy.results.setdefault(&quot;unique&quot;, 0) + 1
+</pre>
+<p>The reduce function takes a key, an iterator over values, and a task object for collecting output.  The function totals the number of values for each word and emits <tt class="docutils literal"><span class="pre">&lt;word&gt;,</span> <span class="pre">&lt;count&gt;</span></tt> tuples.  The word count for each word is also written as a debug statement to the log, and the total and unique word counts are stored in the <tt class="docutils literal"><span class="pre">happy.results</span></tt> dictionary.</p>
+</div>
+<div class="section">
+<h3><a id="main-function" name="main-function">Main Function</a></h3>
+<pre class="literal-block">
+if __name__ == &quot;__main__&quot;:
+    if len(sys.argv) &lt; 3:
+        print &quot;Usage: &lt;inputpath&gt; &lt;outputpath&gt;&quot;
+        sys.exit(-1)
+    wc = WordCount(sys.argv[1], sys.argv[2])
+    results = wc.run()
+    print str(sum(results[&quot;words&quot;])) + &quot; total words&quot;
+    print str(sum(results[&quot;unique&quot;])) + &quot; unique words&quot;
+</pre>
+<p>The job invocation needs to be enclosed in a main block, or else it will get executed on the cluster when the script is called through <tt class="docutils literal"><span class="pre">import</span></tt>.  The job is dispatched by calling <tt class="docutils literal"><span class="pre">run</span></tt>, and a result object is returned that rolls up all of the <tt class="docutils literal"><span class="pre">happy.results</span></tt> objects on the cluster.  In this case, the results dictionary contains an array of all &quot;words&quot; and &quot;unique&quot; values that were written on the cluster.</p>
+</div>
+</div>
+<div class="section">
+<h2><a id="happy-notes" name="happy-notes">Happy Notes</a></h2>
+<div class="section">
+<h3><a id="job-parameters" name="job-parameters">Job Parameters</a></h3>
+<p>Job parameters are set as fields on your job instance and are detailed in <a class="reference" href="#happyjob-parameters">HappyJob Parameters</a>.  The parameters mostly all translate to standard Hadoop JobConf parameters, but if you're unhappy with these or want an additional level of customization, you can override the jobconf parameters using the <tt class="docutils literal"><span class="pre">HappyJob.jobargs</span></tt> dictionary.</p>
+</div>
+<div class="section">
+<h3><a id="happy-path" name="happy-path">Happy Path</a></h3>
+<p>Jython modules and Java jar files that are being called by your code can be specified using the environment variable <tt class="docutils literal"><span class="pre">HAPPY_PATH</span></tt>.  These are added to the Python path at startup, and are also automatically included when jobs are sent to Hadoop.  The path is stored in <tt class="docutils literal"><span class="pre">happy.path</span></tt> and can be edited at runtime.</p>
+</div>
+<div class="section">
+<h3><a id="results-object" name="results-object">Results Object</a></h3>
+<p>Happy allows result data to be sent from tasks executed on the cluster to the calling process through the <tt class="docutils literal"><span class="pre">happy.results</span></tt> dictionary.  Any map or reduce task can write to <tt class="docutils literal"><span class="pre">happy.results</span></tt> using any key, and then all of the dictionaries are combined, and returned from <tt class="docutils literal"><span class="pre">HappyJob.run()</span></tt> as a single dictionary with lists of values for each key.  Behind the scenes, the data files that are passed back are compressed, so a reasonable large amount of data can be returned quickly, but this won't work well if the results use up too much memory on the client process.</p>
+</div>
+<div class="section">
+<h3><a id="input-format" name="input-format">Input Format</a></h3>
+<p>Valid file input formats, are &quot;text&quot; (one value per line), &quot;keyvalue&quot; (one key-value pair per line, separated by a tab), or &quot;sequence&quot; (a binary compressed sequencefile), or &quot;auto&quot; (auto-detect sequence or keyvalue).</p>
+<p>The default input format for Happy is &quot;auto&quot;, which automatically detects whether the input is a tab-seperated key-value text file or a sequence file.  If the input is a text file, the keys and values are passed through as Strings.  If the input is a sequence file of Text values, they are also passed through as Strings, otherwise the native objects are passed through.</p>
+</div>
+<div class="section">
+<h3><a id="compression" name="compression">Compression</a></h3>
+<p>Hadoop will automatically handle compressed text files when the <tt class="docutils literal"><span class="pre">text</span></tt> or <tt class="docutils literal"><span class="pre">keyvalue</span></tt> inputformats are used as long as the input files have appropriate extensions.  The supported formats and extensions are gzip (<tt class="docutils literal"><span class="pre">.gz</span></tt>), zlib (<tt class="docutils literal"><span class="pre">.deflate</span></tt>), and lzo (<tt class="docutils literal"><span class="pre">.lzo</span></tt>).  Output compression of text and sequence files can be enabled by setting <tt class="docutils literal"><span class="pre">compressoutput=True</span></tt>.  The codec can be selected by setting <tt class="docutils literal"><span class="pre">compressiontype</span></tt> to <tt class="docutils literal"><span class="pre">zlib</span></tt>, <tt class="docutils literal"><span class="pre">gzip</span></tt>, or <tt class="docutils literal"><span class="pre">lzo</span></tt>.</p>
+</div>
+<div class="section">
+<h3><a id="sequence-files" name="sequence-files">Sequence Files</a></h3>
+<p>Sequence Files are Hadoop's binary file format for storing and compressing sequential key-value data.  You can tell a sequence file because the first three characters are <tt class="docutils literal"><span class="pre">SEQ</span></tt> followed by binary data.  Sequence files store the Java classes for serializing the keys and values (most often these are type <tt class="docutils literal"><span class="pre">Text</span></tt>) and the codec used for compression.  They are a fast and efficient way to store data that you're using for map-reduce jobs.</p>
+<p>Enable sequence file compression by setting <tt class="docutils literal"><span class="pre">compressoutput=True</span></tt>.  Sequence file compression can be set to <tt class="docutils literal"><span class="pre">BLOCK</span></tt> (default) or <tt class="docutils literal"><span class="pre">RECORD</span></tt> using the <tt class="docutils literal"><span class="pre">sequencetype</span></tt> parameter.  Block compression allows sequence files to be split on a block boundary, and record compression allows sequence files to be split at any record.  Block compression is significantly faster and more efficient than record compression.</p>
+</div>
+<div class="section">
+<h3><a id="alternative-collectors" name="alternative-collectors">Alternative Collectors</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">happy.dfs</span></tt> module allows for alternative collectors other than the <tt class="docutils literal"><span class="pre">task</span></tt> collector.  These are useful if you want to sort your output data into multiple directories, or want to store a large amount of data as a side-affect of your job.  Partitioned collectors are collectors where the filename is automatically created based on the current task id.</p>
+</div>
+<div class="section">
+<h3><a id="json-apis" name="json-apis">JSON APIs</a></h3>
+<p>Happy includes fast APIs for encoding and decoding JSON data to native Python data structures.  This is a convenient way to sort and serialize data in a portable and inspectable form.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<h1><a id="happy-apis" name="happy-apis">Happy APIs</a></h1>
+<div class="section">
+<h2><a id="happyjob-parameters" name="happyjob-parameters"><tt class="docutils literal"><span class="pre">HappyJob</span></tt> Parameters</a></h2>
+<p>These are job parameters that can be set on <tt class="docutils literal"><span class="pre">happy.HappyJob</span></tt>.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">jobname</span></tt></dt>
+<dd>A name for the job.</dd>
+<dt><tt class="docutils literal"><span class="pre">inputpaths</span></tt></dt>
+<dd>REQUIRED - A single input path or array of input paths in the DFS.</dd>
+<dt><tt class="docutils literal"><span class="pre">outputpath</span></tt></dt>
+<dd>REQUIRED - The output path in the DFS.</dd>
+<dt><tt class="docutils literal"><span class="pre">inputformat</span></tt></dt>
+<dd>The file input format, either <tt class="docutils literal"><span class="pre">text</span></tt> (one value per line), <tt class="docutils literal"><span class="pre">keyvalue</span></tt> (one key-value pair per line, separated by a tab), or <tt class="docutils literal"><span class="pre">sequence</span></tt> (a binary compressed sequencefile), or <tt class="docutils literal"><span class="pre">auto</span></tt> (auto-detect sequence or keyvalue).  The default is <tt class="docutils literal"><span class="pre">auto</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">outputformat</span></tt></dt>
+<dd>The file output format, either &quot;text&quot; (one key-value pair per line, separated by a tab), or &quot;sequence&quot; (a binary compressed sequencefile).  The default is &quot;text&quot;.</dd>
+<dt><tt class="docutils literal"><span class="pre">maptasks</span></tt></dt>
+<dd>The number of map tasks to run.</dd>
+<dt><tt class="docutils literal"><span class="pre">reducetasks</span></tt></dt>
+<dd>The number of reduce tasks to run.  Set to 0 if you want to skip the reduce step.</dd>
+<dt><tt class="docutils literal"><span class="pre">localjob</span></tt></dt>
+<dd>Set to True if the job should run locally, pulling data from the DFS.  Good for debugging, but be sure that you don't use a file that is too large.</dd>
+<dt><tt class="docutils literal"><span class="pre">localjob</span></tt></dt>
+<dd>Set to True if the default filesystem should be local.  Good for debugging.</dd>
+<dt><tt class="docutils literal"><span class="pre">compressoutput</span></tt></dt>
+<dd>Set to True to compress <cite>text</cite> and <cite>sequence</cite> file output.  False by default.</dd>
+<dt><tt class="docutils literal"><span class="pre">compressiontype</span></tt></dt>
+<dd>Selects a compression codec for output.  Valid values are <cite>gzip</cite>, <cite>zlib</cite>, and <cite>lzo</cite> (default).</dd>
+<dt><tt class="docutils literal"><span class="pre">sequencetype</span></tt></dt>
+<dd>Selects a sequence file compression mode.  Valid values are <cite>RECORD</cite>, and <cite>BLOCK</cite> (default).</dd>
+<dt><tt class="docutils literal"><span class="pre">jobargs</span></tt></dt>
+<dd>Overrides and/or sets any hadoop job configuration parameters.  Values should be entered as a dictionary of key/value pairs, where the key is the parameter name and the value is the value the parameter should be set to.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="happyjob-methods" name="happyjob-methods"><tt class="docutils literal"><span class="pre">HappyJob</span></tt> Methods</a></h2>
+<p>At minimum, a job class needs a <tt class="docutils literal"><span class="pre">map(records,</span> <span class="pre">task)</span></tt> function to run.  A <tt class="docutils literal"><span class="pre">reduce(key,</span> <span class="pre">values,</span> <span class="pre">task)</span></tt> function is required if <tt class="docutils literal"><span class="pre">HappyJob.reducetasks</span></tt> is greater than 0.  Other functions that can be defined for the job are:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">mapconfig()</span></tt></dt>
+<dd>If this function is defined, it is called before <tt class="docutils literal"><span class="pre">map</span></tt> is called.</dd>
+<dt><tt class="docutils literal"><span class="pre">mapclose()</span></tt></dt>
+<dd>If this function is defined, it is called after all <tt class="docutils literal"><span class="pre">map</span></tt> calls for the current task are done.</dd>
+<dt><tt class="docutils literal"><span class="pre">reduceconfig()</span></tt></dt>
+<dd>If this function is defined, it is called before <tt class="docutils literal"><span class="pre">reduce</span></tt> is called.</dd>
+<dt><tt class="docutils literal"><span class="pre">reduceclose()</span></tt></dt>
+<dd>If this function is defined, it is called after all <tt class="docutils literal"><span class="pre">reduce</span></tt> calls for the current task are done.</dd>
+<dt><tt class="docutils literal"><span class="pre">combineconfig()</span></tt></dt>
+<dd>If this function is defined, it is called before <tt class="docutils literal"><span class="pre">combine</span></tt> is called.</dd>
+<dt><tt class="docutils literal"><span class="pre">combine(key,</span> <span class="pre">values,</span> <span class="pre">task)</span></tt></dt>
+<dd>If this function is defined, it is called during the combine step.  Map outputs local to the current box can be partially reduced before they are sorted and sent to the reducer.</dd>
+<dt><tt class="docutils literal"><span class="pre">combineclose()</span></tt></dt>
+<dd>If this function is defined, it is called after all <tt class="docutils literal"><span class="pre">combine</span></tt> calls for the current task are done.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="task-object" name="task-object"><tt class="docutils literal"><span class="pre">task</span></tt> Object</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">task</span></tt> object passed into the map and reduce functions is used to output data and get information about the current task.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">task.collect(key,</span> <span class="pre">value)</span></tt></dt>
+<dd>Collects the key and value as output.</dd>
+</dl>
+<p><tt class="docutils literal"><span class="pre">task.getInputPath()</span></tt>
+Returns the input path from which the current records are being read.  This is useful if you're reading from multiple different files and want to have different code run depending on the input.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">task.progress()</span></tt></dt>
+<dd>Reports progress back to the TaskTracker.  Use this if you have a task that is going to take a very long time to complete.</dd>
+<dt><tt class="docutils literal"><span class="pre">task.setStatus(status)</span></tt></dt>
+<dd>Reports a status message back to the TaskTracker.  Use this to change the message displayed on a task.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="happy-module" name="happy-module"><tt class="docutils literal"><span class="pre">happy</span></tt> module</a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">getJobConf()</span></tt></dt>
+<dd>Retrieves a Hadoop <a class="reference" href="http://hadoop.apache.org/core/docs/current/api/org/apache/hadoop/mapred/JobConf.html">JobConf</a> that is valid for the current task.</dd>
+<dt><tt class="docutils literal"><span class="pre">path</span></tt></dt>
+<dd>A list of files and directories that will be included with the current job and copied to the cluster.  This is set from the <tt class="docutils literal"><span class="pre">HAPPY_PATH</span></tt> environment variable.</dd>
+<dt><tt class="docutils literal"><span class="pre">job</span></tt></dt>
+<dd>This is only set if the current context is in a server task.  <tt class="docutils literal"><span class="pre">job.getJobConf()</span></tt> returns a Hadoop <tt class="docutils literal"><span class="pre">JobConf</span> <span class="pre">&lt;http://hadoop.apache.org/core/docs/current/api/org/apache/hadoop/mapred/JobConf.html&gt;</span></tt> that is valid for the current task.  <tt class="docutils literal"><span class="pre">job.getTaskPartition()</span></tt> returns the current task partition for this context.</dd>
+<dt><tt class="docutils literal"><span class="pre">results</span></tt></dt>
+<dd>This is a dictionary of task results that can be set during a map or reduce task, and is passed back to the client process.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="happy-log-module" name="happy-log-module"><tt class="docutils literal"><span class="pre">happy.log</span></tt> module</a></h2>
+<p>The Happy logging module integrates with Hadoop's built-in logging support, which uses Log4J and the Apache Commons Logging adapters.  The log objects used in this module are all instances of the <a class="reference" href="http://commons.apache.org/logging/commons-logging-1.1.1/apidocs/org/apache/commons/logging/Log.html">Apache Log API</a>.  An example usage can be seen in the wordcount example.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">log</span></tt></dt>
+<dd>The default log object, with name &quot;happy.task&quot;.</dd>
+<dt><tt class="docutils literal"><span class="pre">getLog(name)</span></tt></dt>
+<dd>Gets a named log instance.  The name is prefixed with &quot;happy&quot;.</dd>
+<dt><tt class="docutils literal"><span class="pre">setLevel(level)</span></tt></dt>
+<dd>Sets the happy logging level.  Level names are, in order, &quot;trace&quot;, &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, and &quot;fatal&quot;.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="happy-json-module" name="happy-json-module"><tt class="docutils literal"><span class="pre">happy.json</span></tt> module</a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">encode(o)</span></tt></dt>
+<dd>Encodes a Python dict, list, string, or other basic type to a JSON string.</dd>
+<dt><tt class="docutils literal"><span class="pre">decode(s)</span></tt></dt>
+<dd>Decodes a JSON string to a Python object.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="happy-dfs-module" name="happy-dfs-module"><tt class="docutils literal"><span class="pre">happy.dfs</span></tt> module</a></h2>
+<p>Functions for accessing the Hadoop DFS and the local filesystem.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">getFileSystem(fs=&quot;dfs&quot;)</span></tt></dt>
+<dd>Returns a Hadoop <a class="reference" href="http://hadoop.apache.org/core/docs/current/api/org/apache/hadoop/fs/FileSystem.html">FileSystem</a> object.  Valid types are &quot;dfs&quot; (for the default filesystem) and &quot;local&quot;.</dd>
+<dt><tt class="docutils literal"><span class="pre">read(path)</span></tt></dt>
+<dd>Returns a Python file-like object to read the specified DFS file or path.  If a directory is given as a parameter, the returned object transparently iterates over all of the files in the directory.</dd>
+<dt><tt class="docutils literal"><span class="pre">write(path)</span></tt></dt>
+<dd>Returns a Python file-like object to write to the specified DFS file.  DFS currently doesn't support appends, so you can only create new files using this method.  Be sure to close the file or there will be write errors.</dd>
+<dt><tt class="docutils literal"><span class="pre">delete(path)</span></tt></dt>
+<dd>Deletes a DFS file or directory.</dd>
+<dt><tt class="docutils literal"><span class="pre">copyToLocal(path,</span> <span class="pre">localpath)</span></tt></dt>
+<dd>Copies a DFS file or directory to a local file.</dd>
+<dt><tt class="docutils literal"><span class="pre">copyFromLocal(localpath,</span> <span class="pre">path)</span></tt></dt>
+<dd>Copies a local file to a DFS file.</dd>
+<dt><tt class="docutils literal"><span class="pre">rename(src,</span> <span class="pre">dst)</span></tt></dt>
+<dd>Renames a file or path.</dd>
+<dt><tt class="docutils literal"><span class="pre">merge(path,</span> <span class="pre">dst)</span></tt></dt>
+<dd>Merges files in a specified DFS directory to a specified DFS file.</dd>
+<dt><tt class="docutils literal"><span class="pre">createCollector(path,</span> <span class="pre">fs=&quot;dfs&quot;,</span> <span class="pre">type=&quot;text&quot;,</span> <span class="pre">key=&quot;text&quot;,</span> <span class="pre">value=&quot;text&quot;,</span> <span class="pre">compressiontype=None,</span> <span class="pre">sequencetype=&quot;BLOCK&quot;):</span></tt></dt>
+<dd>Creates an output collector which collects key value pairs at the specified path. Optional parameters are <tt class="docutils literal"><span class="pre">fs</span></tt> which can be <tt class="docutils literal"><span class="pre">dfs</span></tt> (default) for the HDFS filesystem or <tt class="docutils literal"><span class="pre">local</span></tt> for the local filesystem, <tt class="docutils literal"><span class="pre">type</span></tt> which can be <tt class="docutils literal"><span class="pre">text</span></tt> (default) or <tt class="docutils literal"><span class="pre">sequence</span></tt>, and additional parameters for configuring compression in a sequence file.</dd>
+<dt><tt class="docutils literal"><span class="pre">createPartitionedCollector(path,</span> <span class="pre">fs=&quot;dfs&quot;,</span> <span class="pre">type=&quot;text&quot;,</span> <span class="pre">key=&quot;text&quot;,</span> <span class="pre">value=&quot;text&quot;,</span> <span class="pre">compressiontype=None,</span> <span class="pre">sequencetype=&quot;BLOCK&quot;)</span></tt></dt>
+<dd>Creates an automatically partitioned output collector in the specified directory.  The file is named based on the current task partition of the map or reduce task.  Optional parameters are <tt class="docutils literal"><span class="pre">fs</span></tt> which can be <tt class="docutils literal"><span class="pre">dfs</span></tt> (default) for the HDFS filesystem or <tt class="docutils literal"><span class="pre">local</span></tt> for the local filesystem, <tt class="docutils literal"><span class="pre">type</span></tt> which can be <tt class="docutils literal"><span class="pre">text</span></tt> (default) or <tt class="docutils literal"><span class="pre">sequence</span></tt>, and additional parameters for configuring compression in a sequence file.</dd>
+<dt><tt class="docutils literal"><span class="pre">readSequenceFile(path,</span> <span class="pre">fs=&quot;dfs&quot;)</span></tt></dt>
+<dd>Opens a sequence file for reading, and returns an iterator over the <tt class="docutils literal"><span class="pre">(key,</span> <span class="pre">value)</span></tt> tuples.</dd>
+<dt><tt class="docutils literal"><span class="pre">getTaskPartition()</span></tt></dt>
+<dd>Returns an integer indicating which task partition is currently executing.  This number will correspond to the map or reduce task number visible in the Hadoop job tracker.  It returns -1 if not currently in a task.</dd>
+<dt><tt class="docutils literal"><span class="pre">mktemp(name=None)</span></tt></dt>
+<dd>Generate a directory path safe to use for temporary data.
+An optional name will be used to prefix the path for easier debugging.
+The path will be generated within the current hadoop.tmp.dir and will sort chronologically.</dd>
+</dl>
+</div>
+</div>
+</div>
+</body>
+</html>

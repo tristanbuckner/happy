@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="lib" path="happy.jar"/>
+	<classpathentry kind="lib" path="lib/jline-0.9.94.jar"/>
+	<classpathentry kind="lib" path="lib/nutch-1.0-dev.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/hadoop/lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="/hadoop/hadoop-0.20.2-core.jar" sourcepath="/hadoop"/>
+	<classpathentry kind="lib" path="/hadoop/hadoop-0.20.2-tools.jar"/>
+	<classpathentry kind="lib" path="/hadoop/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/hadoop/lib/commons-logging-api-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/tristanbuckner/jython2.5.1/jython.jar"/>
+	<classpathentry kind="lib" path="/hadoop/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
