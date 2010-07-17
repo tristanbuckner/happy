@@ -42,7 +42,6 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapred.RecordReader;
-import org.apache.hadoop.mapreduce.Job;
 import org.python.core.*;
 import org.python.util.PythonInterpreter;
 
@@ -66,7 +65,7 @@ public class HappyBase {
     protected PyObject jobObject;
     protected PyObject workFunction;
     protected PyObject pytask;
-    protected Job job;
+    protected JobConf jobConf;
     protected JobWrapper jobWrapper;
 
     /**
@@ -83,17 +82,17 @@ public class HappyBase {
         else return PyJavaType.wrapJavaObject(o);
     }
 
-    public void configure(Job job) {
-        this.job = job;
+    public void configure(JobConf jobConf) {
+        this.jobConf = jobConf;
         jobStart = System.currentTimeMillis();
-        log.info("Starting config for job " + job.getJobName());
+        log.info("Starting config for job " + jobConf.getJobName());
 
         // set up the local resources:
-        if(!"local".equals(job.getConfiguration().get("mapred.job.tracker")))
+        if(!"local".equals(jobConf.get("mapred.job.tracker")))
         {
             try
             {
-                symlinkResources(job);
+                symlinkResources(jobConf);
                 log.info("Symlinked local resources");
             }
             catch(IOException ioe)
@@ -110,7 +109,7 @@ public class HappyBase {
         // add our jar file to the pythonpath:
         PyList pathList = Py.getSystemState().path;
         pathList.insert(0, new PyString(thisJar));
-        for(String path: job.getConfiguration().get(PATH_KEY, "").split(":"))
+        for(String path: jobConf.get(PATH_KEY, "").split(":"))
         {
             if(path.length() > 0) pathList.insert(0, new PyString(path));
         }
@@ -125,12 +124,12 @@ public class HappyBase {
         log.info("Jython intepreter created");
 
         // set up the happy environment:
-        jobWrapper = new JobWrapper(job);
+        jobWrapper = new JobWrapper(jobConf);
         pythonInterpreter.exec("import happy");
         pythonInterpreter.get("happy").__setattr__(new PyString("job"), PyJavaType.wrapJavaObject(jobWrapper));
 
         // import script:
-        String importFile = job.getConfiguration().get(SCRIPT_KEY);
+        String importFile = jobConf.get(SCRIPT_KEY);
         if(importFile != null)
         {
             String importPackage = importFile.substring(0, importFile.lastIndexOf("."));
@@ -138,7 +137,7 @@ public class HappyBase {
         }
 
         // get our script object:
-        File scriptObjectFile = new File(job.getConfiguration().get(SCRIPT_OBJECT));
+        File scriptObjectFile = new File(jobConf.get(SCRIPT_OBJECT));
 
         log.info("Deserializing " + scriptObjectFile.getAbsolutePath() + ", size: " + scriptObjectFile.length());
         try {
@@ -189,7 +188,7 @@ public class HappyBase {
         // close closeables:
         jobWrapper.close();
         // store any results:
-        ResultSerializer.serialize(job, pythonInterpreter);
+        ResultSerializer.serialize(jobConf, pythonInterpreter);
         // unset the job variable:
         pythonInterpreter.get("happy").__setattr__(new PyString("job"), Py.None);
 
@@ -215,8 +214,8 @@ public class HappyBase {
      * @param jobConf
      * @throws java.io.IOException
      */
-    private void symlinkResources(Job job) throws IOException {
-        for(String resource: job.getConfiguration().get(RESOURCE_KEY, "").split(":"))
+    private void symlinkResources(JobConf jobConf) throws IOException {
+        for(String resource: jobConf.get(RESOURCE_KEY, "").split(":"))
         {
             if(resource.length() > 0)
             {
@@ -232,7 +231,7 @@ public class HappyBase {
                 }
             }
         }
-        for(String path: job.getConfiguration().get(PATH_KEY, "").split(":"))
+        for(String path: jobConf.get(PATH_KEY, "").split(":"))
         {
             if(path.length() > 0)
             {

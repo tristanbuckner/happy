@@ -30,8 +30,7 @@
 
 package com.freebase.happy;
 
-
-import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapred.MapRunnable;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.RecordReader;
 import org.apache.hadoop.mapred.Reporter;
@@ -42,7 +41,7 @@ import java.io.IOException;
 /**
  * Happy Mapper.
  */
-public class HappyMap extends HappyBase extends Mapper <Object, Object, Object, Object> {
+public class HappyMap extends HappyBase implements MapRunnable<Object, Object, Object, Object> {
     public void run(RecordReader<Object, Object> recordReader,
                     OutputCollector<Object, Object> outputCollector, Reporter reporter) throws IOException {
         RecordIterator recordIterator = null;

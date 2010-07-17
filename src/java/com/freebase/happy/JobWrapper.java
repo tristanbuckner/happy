@@ -30,25 +30,25 @@
 
 package com.freebase.happy;
 
+import org.apache.hadoop.mapred.JobConf;
+import org.python.core.PyObject;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.hadoop.mapreduce.Job;
-import org.python.core.PyObject;
 
 /**
  * A wrapper for the current JobConf in a job.  Holds task-wide configuration and context.
  */
 public class JobWrapper {
-    private Job job;
+    private JobConf jobConf;
     private List<PyObject> closeables = new ArrayList<PyObject>();
 
-    public JobWrapper(Job job) {
-        this.job = job;
+    public JobWrapper(JobConf jobConf) {
+        this.jobConf = jobConf;
     }
 
-    public Job getJobConf() {
-        return job;
+    public JobConf getJobConf() {
+        return jobConf;
     }
 
     /**
@@ -58,7 +58,7 @@ public class JobWrapper {
      */
     public int getTaskPartition()
     {
-        return job.getConfiguration().getInt("mapred.task.partition", -1);
+        return jobConf.getInt("mapred.task.partition", -1);
     }
 
     /**
